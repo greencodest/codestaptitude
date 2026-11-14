@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Codester ICT Assessment & Certification</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+:root{--bg:#f3f6fc;--surface:#fff;--ink:#0b1f44;--muted:#5a6b8c;--line:#d6deee;--blue:#0f3a8a;--blue2:#1f5fd6;--gold:#e0b04a;--gold2:#b98a24;--ok:#13804a;--bad:#c0392b;--hero1:#06173a;--hero2:#0f3a8a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#071228;--surface:#0e1f40;--ink:#eaf0ff;--muted:#9fb1d6;--line:#25396a}}
+:root[data-theme="dark"]{--bg:#071228;--surface:#0e1f40;--ink:#eaf0ff;--muted:#9fb1d6;--line:#25396a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.5}
+.hero{background:radial-gradient(circle at 20% 0,var(--hero2),var(--hero1));color:#fff;text-align:center;padding:42px 16px 34px;perspective:900px;overflow:hidden}
+.brand{font-size:.95rem;letter-spacing:.04em;color:#cfe0ff}
+.t3d{display:inline-block;font-family:Georgia,"Times New Roman",serif;font-weight:900;font-size:clamp(2rem,8vw,4.2rem);line-height:1.05;margin:10px 0;color:var(--gold);
+text-shadow:0 1px 0 #d9a73c,0 2px 0 #c99a2e,0 3px 0 #b98a24,0 4px 0 #a87b1c,0 5px 0 #976c15,0 6px 0 #865d10,0 14px 18px rgba(0,0,0,.5);
+transform:rotateX(16deg) rotateY(-10deg);animation:sway 6s ease-in-out infinite alternate}
+.t3d span{display:inline-block;animation:flip 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*90ms);transform-origin:50% 100%}
+@keyframes sway{to{transform:rotateX(8deg) rotateY(10deg)}}
+@keyframes flip{0%,70%,100%{transform:rotateX(0)}85%{transform:rotateX(360deg) translateY(-6px)}}
+.type{min-height:1.7em;font-size:1.15rem;color:#fff}
+.type b{color:var(--gold)}.type i{display:inline-block;width:2px;height:1em;background:var(--gold);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav strong{color:var(--blue2)}
+main{max-width:860px;margin:0 auto;padding:20px 14px 60px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 8px 28px rgba(15,58,138,.12)}
+h2{margin:0 0 6px;font-size:1.5rem}h3{margin:0 0 10px}
+.muted{color:var(--muted)}
+label{display:block;font-weight:600;margin:14px 0 4px;font-size:.92rem}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;font-size:1rem;background:var(--bg);color:var(--ink)}
+input:focus,select:focus,button:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 22px;font-size:1rem;font-weight:700;cursor:pointer;background:var(--blue);color:#fff;margin-top:16px}
+.btn:hover{background:var(--blue2)}.btn.gold{background:var(--gold);color:#2b1d00}.btn.gold:hover{background:#f0c25f}
+.btn.ghost{background:transparent;color:var(--blue2);border:1px solid var(--line)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.tabs{display:flex;gap:8px;margin-bottom:6px}.tabs button{flex:1;padding:10px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font-weight:700;cursor:pointer}
+.tabs button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.err{color:var(--bad);font-size:.9rem;min-height:1.2em;margin-top:8px}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin:8px 0 16px}.bar div{height:100%;background:linear-gradient(90deg,var(--blue2),var(--gold));transition:width .3s}
+.top{display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.timer{font-variant-numeric:tabular-nums;padding:4px 12px;border-radius:20px;background:var(--bg);border:1px solid var(--line)}.timer.low{color:var(--bad);border-color:var(--bad)}
+.opt{display:block;width:100%;text-align:left;padding:13px 14px;margin:8px 0;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-size:1rem;cursor:pointer}
+.opt:hover{border-color:var(--blue2)}.opt.sel{border-color:var(--gold2);background:rgba(224,176,74,.18)}
+.row{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.score{font-size:4.5rem;font-weight:900;font-family:Georgia,serif;color:var(--gold);text-shadow:0 2px 0 #b98a24,0 4px 0 #976c15,0 10px 14px rgba(0,0,0,.35);text-align:center;transform:perspective(500px) rotateX(14deg)}
+.pass{color:var(--ok)}.fail{color:var(--bad)}
+.miss{border-left:4px solid var(--bad);padding:8px 12px;margin:10px 0;background:var(--bg);border-radius:0 8px 8px 0}
+.hide{display:none!important}
+#cw{width:100%;overflow:hidden}
+.cert{width:960px;height:680px;background:#fffdf7;color:#0b1f44;position:relative;padding:26px;font-family:Georgia,"Times New Roman",serif;text-align:center}
+.cert .b1{position:absolute;inset:14px;border:6px double #0f3a8a}
+.cert .b2{position:absolute;inset:30px;border:2px solid #e0b04a}
+.cert .in{position:relative;padding-top:58px}
+.cert h4{margin:0;font-size:1rem;letter-spacing:.2em;color:#0f3a8a;font-weight:700}
+.cert h1{margin:12px 0 6px;font-size:3rem;color:#0f3a8a;text-shadow:0 2px 0 #e0b04a,0 4px 0 #b98a24}
+.cert .nm{font-size:3.2rem;font-style:italic;color:#b98a24;border-bottom:2px solid #e0b04a;display:inline-block;padding:0 30px;margin:10px 0;max-width:820px;word-break:break-word}
+.cert p{margin:8px 60px;font-size:1.15rem}
+.cert .foot{position:absolute;left:70px;right:70px;bottom:64px;display:flex;justify-content:space-between;align-items:flex-end;font-size:.95rem}
+.cert .sig{width:220px;border-top:2px solid #0b1f44;padding-top:4px}.cert .sig em{display:block;font-size:1.7rem;color:#0f3a8a;border:0;margin-bottom:-6px}
+.seal{position:absolute;left:50%;bottom:48px;transform:translateX(-50%)}.cert{background:radial-gradient(circle at 50% 45%,#fffefb,#fbf2d9)}.cert .wm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:320px;opacity:.07}.cert .cn{position:absolute;width:64px;height:64px;border:4px solid #e0b04a}.cn.tl{top:42px;left:42px;border-right:0;border-bottom:0}.cn.tr{top:42px;right:42px;border-left:0;border-bottom:0}.cn.bl{bottom:42px;left:42px;border-right:0;border-top:0}.cn.br{bottom:42px;right:42px;border-left:0;border-top:0}.cert .ribbon{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:110px;height:58px;background:linear-gradient(#0f3a8a,#1f5fd6);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)}.cert .sub{font-size:1.6rem;font-style:italic;letter-spacing:.14em;color:#b98a24;margin-bottom:4px}.cert .foot{border-top:1px solid #e0b04a;padding-top:12px}
+@media print{@page{size:landscape;margin:0}body *{visibility:hidden}#cw,#cw *{visibility:visible}#cw{position:absolute;left:0;top:0;height:auto!important;overflow:visible}.cert{transform:none!important;width:100vw;height:100vh}}
+@media (prefers-reduced-motion:reduce){.t3d,.t3d span{animation:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="brand">Codester Academy</div>
+  <div class="t3d" id="title3d" aria-label="ICT Assessment and Certification"></div>
+  <div class="type" id="type"></div>
+</header>
+<nav id="nav" class="hide"><span>Signed in as <strong id="who"></strong></span><button class="btn ghost" style="margin:0;padding:8px 14px" onclick="logout()">Log out</button></nav>
+<main id="app"></main>
+
+<script>
+const Q=[
+["Which device forwards data packets between different networks?",["Hub","Router","Repeater","Modem card"],1],
+["What does RAM stand for?",["Random Access Memory","Read Active Module","Rapid Archive Memory","Remote Access Machine"],0],
+["Which port does HTTPS use by default?",["21","80","443","25"],2],
+["Which of these is an open-source operating system?",["Windows","macOS","Linux","iOS"],2],
+["What is phishing?",["A hardware fault","Deceptive messages used to steal sensitive data","A backup method","A network speed test"],1],
+["Which cloud model delivers ready-to-use software over the internet?",["IaaS","PaaS","SaaS","DaaS only"],2],
+["Which SQL command retrieves data from a table?",["INSERT","UPDATE","DROP","SELECT"],3],
+["How many bits are in an IPv4 address?",["16","32","64","128"],1],
+["Which component is called the brain of the computer?",["CPU","Monitor","Hard disk","Power supply"],0],
+["What does two-factor authentication add to a login?",["A faster connection","A second proof of identity","A longer password limit","Automatic backups"],1]
+];
+/* Question banks: each string is question|correct answer|wrong|wrong|wrong (options are shuffled on every attempt) */
+const mk=a=>a.map(s=>{const p=s.split("|");return[p[0],p.slice(1),0]});
+const D=(name,icon,code,skills,q)=>({name,icon,code,skills,q});
+const BANK={
+ict:D("ICT","💻","ICT","networking, hardware, software, cybersecurity, cloud computing and databases",Q.concat(mk([
+`Which protocol translates domain names into IP addresses?|DNS|DHCP|FTP|SMTP`,
+`What is the main purpose of a backup?|Recover data after loss|Speed up the computer|Free up RAM|Block spam`,
+`What does a firewall do?|Filters network traffic using rules|Cools the processor|Compresses files|Prints documents`,
+`Which storage device has no moving parts?|SSD|HDD|Floppy disk|Magnetic tape`]))),
+admin:D("Administration","🏛️","ADM","office management, record keeping, meetings and communication",mk([
+`Which document records the decisions made at a meeting?|Minutes|Agenda|Memo|Invoice`,
+`Arranging records so they can be found quickly is called:|Filing|Editing|Auditing|Typing`,
+`A memo is mainly used for:|Internal communication in an organisation|Selling products|Advertising|Public notices only`,
+`The chain of command refers to:|The line of authority from top to bottom|A security alarm|A type of meeting|A filing system`,
+`Which of these is a function of management?|Planning|Typing|Cleaning|Printing`,
+`Delegation means:|Assigning tasks and authority to a subordinate|Doing all work yourself|Dismissing staff|Cancelling a meeting`,
+`An agenda is:|A list of items to be discussed at a meeting|A record of past decisions|A staff salary list|A visitor register`,
+`Confidential documents should be:|Stored securely with limited access|Left on open desks|Shared with everyone|Posted on notice boards`,
+`Who normally leads and controls a meeting?|The chairperson|The messenger|The visitor|The auditor`,
+`What is a quorum?|The minimum members needed for valid decisions|The meeting venue|The chairperson's deputy|A list of absentees`,
+`A job description lists:|Duties and responsibilities of a position|Staff salaries|Company profits|Meeting dates`,
+`Which is a barrier to effective communication?|Unclear language and jargon|Active listening|Clear feedback|Simple wording`])),
+health:D("Health","🩺","HLT","basic health knowledge, hygiene, disease prevention and patient care",mk([
+`What is the normal adult body temperature?|About 37°C|About 30°C|About 42°C|About 25°C`,
+`Which organ pumps blood around the body?|Heart|Liver|Kidney|Lung`,
+`Lack of vitamin C causes:|Scurvy|Rickets|Night blindness|Anaemia only`,
+`Malaria is transmitted by which mosquito?|Anopheles|Culex|Aedes only|Tsetse fly`,
+`The best way to clean hands is:|Soap and clean running water|Wiping with a cloth|Rinsing with cold water only|Rubbing with dust`,
+`Blood pressure is measured with a:|Sphygmomanometer|Thermometer|Stethoscope alone|Glucometer`,
+`Which vaccine protects against tuberculosis?|BCG|Polio|Measles|Tetanus`,
+`Oxygen is carried in the blood by:|Red blood cells|White blood cells|Platelets|Plasma only`,
+`In Tanzania's health services, RCH stands for:|Reproductive and Child Health|Rural Clinic Hospital|Regional Care Help|Rapid Case Handling`,
+`Oral rehydration solution is used to treat:|Dehydration from diarrhoea|Broken bones|Malaria parasites|High blood pressure`,
+`WHO advises exclusive breastfeeding for the first:|6 months|1 month|2 months|12 months`,
+`HIV is NOT transmitted by:|Shaking hands|Unscreened blood transfusion|Sharing needles|Mother to child`])),
+finance:D("Finance & Accounting","📊","FIN","bookkeeping, financial statements, budgeting and financial control",mk([
+`The accounting equation is:|Assets = Liabilities + Equity|Assets = Income − Expenses|Equity = Assets + Liabilities|Profit = Assets × Equity`,
+`Which statement shows profit or loss for a period?|Income statement|Balance sheet|Trial balance|Cash book`,
+`A receipt is evidence of:|Payment received|Goods ordered|A loan granted|A budget approved`,
+`Depreciation is:|Spreading an asset's cost over its useful life|A rise in asset value|A type of tax|Cash paid to suppliers`,
+`Gross profit equals:|Sales − Cost of goods sold|Sales + Expenses|Assets − Liabilities|Cash − Debtors`,
+`Which of these is a current asset?|Cash at bank|Land|Building|Heavy machinery`,
+`A budget is:|A financial plan for a future period|A record of past sales|A tax receipt|A bank statement`,
+`A trial balance checks that:|Total debits equal total credits|Profit is high|Stock is counted|Taxes are paid`,
+`VAT is charged on:|Goods and services sold|Only imported cars|Only salaries|Only donations`,
+`Petty cash is used for:|Small day-to-day expenses|Buying land|Paying large loans|Paying directors' dividends`,
+`Which of these is a liability?|Loan payable|Cash in hand|Debtors|Stock of goods`,
+`An audit is:|An independent examination of financial records|A sales campaign|A staff meeting|A stock order`])),
+edu:D("Education","🎓","EDU","teaching methods, assessment and classroom management",mk([
+`A lesson plan outlines:|Objectives, activities and assessment of a lesson|Only the school timetable|Learners' fees|The school budget`,
+`Formative assessment is done:|During learning to monitor progress|Only at the end of the year|Before the school opens|After graduation`,
+`Bloom's taxonomy classifies:|Levels of learning objectives|Types of schools|Teacher salaries|Classroom furniture`,
+`A scheme of work is:|A breakdown of the syllabus over a period|A learner's report|A school uniform list|A fee statement`,
+`Learner-centred teaching emphasises:|Active participation of learners|Teacher talking all the time|Silent copying|Memorising without understanding`,
+`Who proposed the stages of cognitive development?|Jean Piaget|Isaac Newton|Adam Smith|Louis Pasteur`,
+`Which is an example of summative assessment?|End-of-term examination|Oral question in class|Observation during group work|Quick quiz warm-up`,
+`Teaching aids are used to:|Make learning clearer and more engaging|Replace the teacher|Punish learners|Reduce lesson time`,
+`A syllabus is:|The prescribed content outline for a subject|A list of school rules|A staff meeting record|A textbook price list`,
+`Classroom management means:|Keeping an orderly environment for learning|Locking the classroom|Avoiding all discussion|Giving no homework`,
+`The best response to a disruptive learner is to:|Address the behaviour calmly and consistently|Shout in front of everyone|Ignore the whole class|Send them away permanently`,
+`Feedback to learners is most useful when it is:|Specific and timely|Vague and late|Only negative|Given once a year`])),
+law:D("Law","⚖️","LAW","legal principles, the courts and the Tanzanian legal system",mk([
+`The supreme law of the United Republic of Tanzania is:|The Constitution|A ministerial circular|A company policy|A court summons`,
+`Which arm of government interprets laws and settles disputes?|The Judiciary|The Executive|The Legislature|The Police`,
+`A plaintiff is:|A person who brings a civil case|A person accused of a crime|A court clerk|A witness only`,
+`Which body makes laws in Tanzania?|Parliament (Bunge)|The Court of Appeal|The Police Force|District commissioners`,
+`The presumption of innocence means:|An accused is innocent until proven guilty|An accused is guilty until proven innocent|Only the judge is innocent|Witnesses are always right`,
+`An affidavit is:|A written statement made under oath|A type of court|A prison sentence|A tax form`,
+`Which is the highest court in Tanzania's judiciary system?|Court of Appeal of Tanzania|Primary Court|District Court|Ward Tribunal`,
+`A crime is:|An act punishable by law|Any private disagreement|A business loss|A tax payment`,
+`Copyright protects:|Original creative works|Natural resources|Public roads|Weather`,
+`A statute of limitation sets:|A time limit for bringing a legal claim|The price of a lawsuit|A judge's salary|The number of witnesses`,
+`A will is a document that:|States how property is shared after death|Starts a criminal case|Sets court fees|Registers a business`,
+`A valid contract requires:|Offer, acceptance and consideration|Only a verbal threat|A court order|A witness's signature only`])),
+hr:D("Human Resources","👥","HRM","recruitment, staff development, payroll and employee relations",mk([
+`Recruitment normally begins with:|Identifying the vacancy and its requirements|Dismissing staff|Paying salaries|Closing the office`,
+`Induction is:|Orienting new employees to the organisation|Firing an employee|A salary increase|A tax audit`,
+`A performance appraisal:|Evaluates an employee's job performance|Sets product prices|Records visitors|Orders stationery`,
+`Payroll deals with:|Calculating and paying salaries|Buying equipment|Cleaning offices|Designing logos`,
+`A grievance is:|A complaint about work conditions|A job offer|A salary slip|A training certificate`,
+`A person specification lists:|Qualifications and skills required for a job|The company's profits|The staff lunch menu|Customer complaints`,
+`Which is a non-financial motivator?|Recognition for good work|A cash bonus|A salary rise|Overtime pay`,
+`A probation period is:|A trial period for a new employee|A holiday|A punishment|A retirement plan`,
+`An exit interview is held:|When an employee is leaving|Before hiring|During induction|On public holidays`,
+`Training needs analysis identifies:|Skills gaps among employees|Office rent|Supplier prices|Customer names`,
+`Discrimination in hiring is:|Unfair and unlawful|Encouraged by law|Required for all jobs|A recruitment best practice`,
+`Staff turnover is:|The rate at which employees leave and are replaced|Sales growth|Machine speed|The number of meetings`])),
+agri:D("Agriculture","🌾","AGR","crop and livestock production and sustainable farming",mk([
+`Which nutrient mainly promotes leaf growth?|Nitrogen|Calcium only|Sand|Salt`,
+`Crop rotation helps to:|Reduce pests and restore soil fertility|Increase soil erosion|Remove all nutrients|Stop rainfall`,
+`Which of these is a legume?|Beans|Maize|Sugarcane|Cassava`,
+`Soil acidity is measured on the:|pH scale|Richter scale|Kelvin scale|Beaufort scale`,
+`Mulching is used to:|Conserve soil moisture|Dry the soil|Kill all crops|Increase pests`,
+`Drip irrigation:|Delivers water directly to plant roots|Floods the whole field|Sprays seeds from planes|Only works in winter`,
+`Which of these animals is a ruminant?|Cow|Chicken|Pig|Dog`,
+`Integrated Pest Management:|Combines several methods to control pests sustainably|Uses only one chemical|Ignores pests|Removes all insects`,
+`Compost is made from:|Decomposed organic matter|Plastic|Metal scrap|Cement`,
+`Vaccinating livestock is done to:|Prevent disease|Reduce milk|Increase pests|Stop growth`,
+`Hybrid seeds are produced by:|Crossing two selected parent lines|Burning seeds|Soaking in salt|Freezing seeds`,
+`Photosynthesis needs:|Sunlight, water and carbon dioxide|Only soil|Only fertiliser|Darkness and heat`]))
+};
+const deptOpts=s=>Object.keys(BANK).map(k=>`<option value="${k}" ${k===s?"selected":""}>${BANK[k].icon} ${BANK[k].name}</option>`).join("");
+const $=s=>document.querySelector(s), LS=localStorage, SS=sessionStorage;
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const users=()=>{try{return JSON.parse(LS.getItem("cx_users")||"{}")}catch(e){return{}}};
+const save=u=>{try{LS.setItem("cx_users",JSON.stringify(u))}catch(e){}};
+let me=null,qi=0,ans=[],tleft=0,tid=null,cur=[],curDept="ict";
+async function hash(s){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){return btoa(unescape(encodeURIComponent(s)))}}
+
+/* 3D animated title + typing line */
+$("#title3d").innerHTML="Skills Assessment".split("").map((c,i)=>`<span style="--i:${i}">${c===" "?"&nbsp;":c}</span>`).join("");
+const words=["ICT","Administration","Health","Finance & Accounting","Education","Law","Human Resources","Agriculture"];let wi=0,ci=0,del=false;
+(function tick(){const w=words[wi];ci+=del?-1:1;$("#type").innerHTML=`Test your knowledge of <b>${w.slice(0,ci)}</b><i></i>`;let d=del?40:90;
+if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=300}setTimeout(tick,d)})();
+
+/* Auth */
+function authView(mode){
+ $("#nav").classList.add("hide");
+ $("#app").innerHTML=`<div class="card" style="max-width:440px;margin:0 auto">
+ <div class="tabs"><button class="${mode=="login"?"on":""}" onclick="authView('login')">Log in</button><button class="${mode=="reg"?"on":""}" onclick="authView('reg')">Create account</button></div>
+ <h2>${mode=="reg"?"Create your account":"Welcome back"}</h2>
+ <p class="muted">${mode=="reg"?"Your full name appears exactly as typed on your certificate.":"Log in to take or retake the assessment."}</p>
+ <div id="f">${mode=="reg"?`<label for="n">Full name</label><input id="n" autocomplete="name"><label for="d">Department for your assessment</label><select id="d"><option value="">Select department</option>${deptOpts("")}</select>`:""}
+ <label for="e">Email address</label><input id="e" type="email" autocomplete="email">
+ <label for="p">Password</label><input id="p" type="password" autocomplete="${mode=="reg"?"new-password":"current-password"}" placeholder="${mode=="reg"?"At least 6 characters":""}">
+ ${mode=="reg"?`<label for="p2">Confirm password</label><input id="p2" type="password" autocomplete="new-password">`:""}
+ <div class="err" id="err" role="alert"></div>
+ <button class="btn" onclick="${mode=="reg"?"register()":"login()"}">${mode=="reg"?"Create account":"Log in"}</button></div></div>`;
+ $("#f").addEventListener("keydown",e=>{if(e.key==="Enter")(mode=="reg"?register:login)()});
+}
+const emailOk=e=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+async function register(){
+ const d=$("#d").value,n=$("#n").value.trim().replace(/\s+/g," "),e=$("#e").value.trim().toLowerCase(),p=$("#p").value,p2=$("#p2").value,u=users();
+ if(!d)return $("#err").textContent="Select your department.";
+ if(n.split(" ").length<2||n.length<4)return $("#err").textContent="Enter your full name (first and last name).";
+ if(!emailOk(e))return $("#err").textContent="Enter a valid email address.";
+ if(p.length<6)return $("#err").textContent="Password must be at least 6 characters.";
+ if(p!==p2)return $("#err").textContent="Passwords do not match.";
+ if(u[e])return $("#err").textContent="This email is already registered. Log in instead.";
+ u[e]={name:n,dept:d,pw:await hash(p),attempts:[],certs:{}};save(u);SS.setItem("cx_s",e);boot();
+}
+async function login(){
+ const e=$("#e").value.trim().toLowerCase(),p=$("#p").value,u=users();
+ if(!emailOk(e)||!p)return $("#err").textContent="Enter your email and password.";
+ if(!u[e]||u[e].pw!==await hash(p))return $("#err").textContent="Email or password is incorrect.";
+ SS.setItem("cx_s",e);boot();
+}
+function logout(){clearInterval(tid);SS.removeItem("cx_s");me=null;authView("login")}
+function boot(){const e=SS.getItem("cx_s"),u=users();if(!e||!u[e])return authView("login");me=e;$("#who").textContent=u[e].name;$("#nav").classList.remove("hide");dash()}
+
+/* Dashboard */
+function dash(){
+ const u=users()[me],best=u.attempts.reduce((m,a)=>Math.max(m,a.score),0);
+ $("#app").innerHTML=`<div class="card"><h2>Hello, ${esc(u.name)}</h2>
+ <p class="muted">Choose your department. Each attempt gives you 10 random questions from that department, worth 10 points each, with 10 minutes on the clock. Score 90% or higher to earn your certificate.</p><label for="dp">Department</label><select id="dp">${deptOpts(u.dept)}</select>
+ <p>Attempts: <strong>${u.attempts.length}</strong> &nbsp; Best score: <strong>${u.attempts.length?best+"%":"-"}</strong></p>
+ <button class="btn gold" onclick="startQuiz()">Start assessment</button>
+ ${Object.keys(u.certs||{}).map(k=>`<button class="btn ghost" onclick="showCert('${k}')">Certificate: ${BANK[k].name}</button>`).join(" ")}</div>`;
+}
+
+/* Quiz */
+function startQuiz(){
+ curDept=$("#dp")?$("#dp").value:curDept;const shuf=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+ cur=shuf(BANK[curDept].q).slice(0,10).map(([q,o,a])=>{const ix=shuf(o.map((_,i)=>i));return{q,o:ix.map(i=>o[i]),a:ix.indexOf(a)}});
+ ans=Array(10).fill(null);qi=0;tleft=600;clearInterval(tid);
+ tid=setInterval(()=>{tleft--;paintTimer();if(tleft<=0)submit()},1000);quiz();
+}
+function paintTimer(){const t=$("#tm");if(!t)return;t.textContent=String(Math.floor(tleft/60)).padStart(2,"0")+":"+String(tleft%60).padStart(2,"0");t.classList.toggle("low",tleft<60)}
+function quiz(){
+ const q=cur[qi];
+ $("#app").innerHTML=`<div class="card"><div class="top"><span>${BANK[curDept].name}: Question ${qi+1} of 10</span><span class="timer" id="tm"></span></div>
+ <div class="bar"><div style="width:${(qi+1)*10}%"></div></div><h3>${esc(q.q)}</h3>
+ ${q.o.map((o,i)=>`<button class="opt ${ans[qi]===i?"sel":""}" onclick="pick(${i})">${"ABCD"[i]}. ${esc(o)}</button>`).join("")}
+ <div class="row"><button class="btn ghost" onclick="go(-1)" ${qi?"":"disabled"}>Previous</button>
+ ${qi<9?`<button class="btn" onclick="go(1)">Next</button>`:`<button class="btn gold" onclick="finish()">Submit assessment</button>`}</div></div>`;
+ paintTimer();
+}
+const pick=i=>{ans[qi]=i;quiz()};
+const go=d=>{qi+=d;quiz()};
+function finish(){const left=ans.filter(a=>a===null).length;if(left&&!confirm(left+" question(s) unanswered. Submit anyway?"))return;submit()}
+function submit(){
+ clearInterval(tid);const miss=[];let ok=0;
+ cur.forEach((x,k)=>{if(ans[k]===x.a)ok++;else miss.push({q:x.q,you:ans[k]===null?"No answer":x.o[ans[k]],right:x.o[x.a]})});
+ const score=ok*10,u=users(),r=u[me];r.attempts.push({score,dept:curDept,date:new Date().toISOString()});
+ r.certs=r.certs||{};if(score>=90){const o=r.certs[curDept];if(!o)r.certs[curDept]={id:BANK[curDept].code+"-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*9000)+1000),score,date:new Date().toISOString()};else if(score>o.score)o.score=score}
+ save(u);result(score,miss);
+}
+function result(score,miss){
+ const pass=score>=90;
+ $("#app").innerHTML=`<div class="card"><div class="score">${score}%</div>
+ <h2 class="${pass?"pass":"fail"}" style="text-align:center">${pass?"Congratulations! You passed.":"Not quite there yet."}</h2>
+ <p style="text-align:center" class="muted">${pass?"You scored "+score+"% and earned your Certificate of Achievement in ICT.":"You need 90% to earn the certificate. Review the answers below and try again."}</p>
+ ${miss.length?`<h3>Questions you missed</h3>`+miss.map(m=>`<div class="miss"><strong>${esc(m.q)}</strong><br>Your answer: ${esc(m.you)}<br>Correct answer: <strong>${esc(m.right)}</strong></div>`).join(""):""}
+ <div class="row" style="justify-content:center">${pass?`<button class="btn gold" onclick="showCert(curDept)">Get my certificate</button>`:`<button class="btn gold" onclick="startQuiz()">Retake exam</button>`}<button class="btn ghost" onclick="dash()">Dashboard</button></div></div>`;
+}
+
+/* Certificate */
+function showCert(k){
+ const u=users()[me],c=u.certs[k],dp=BANK[k],d=new Date(c.date).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+ $("#app").innerHTML=`<div class="row" style="margin-bottom:12px"><button class="btn ghost" style="margin:0" onclick="dash()">Back</button><span><button class="btn gold" style="margin:0" onclick="pdf()">Download PDF</button> <button class="btn" style="margin:0" onclick="window.print()">Print</button></span></div>
+ <div id="cw"><div class="cert" id="cert"><div class="b1"></div><div class="b2"></div><div class="wm">${dp.icon}</div><i class="cn tl"></i><i class="cn tr"></i><i class="cn bl"></i><i class="cn br"></i><div class="ribbon"></div><div class="in">
+ <h4>CODESTER ACADEMY</h4><h1>Certificate of Achievement</h1><div class="sub">in ${dp.name}</div>
+ <p>This is to certify that</p><div class="nm">${esc(u.name)}</div>
+ <p>has successfully passed the Codester ${dp.name} Assessment with a score of <strong>${c.score}%</strong>, demonstrating proficiency in ${dp.skills}.</p></div>
+ <svg class="seal" width="110" height="110" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#e0b04a" stroke="#b98a24" stroke-width="4"/><circle cx="50" cy="50" r="37" fill="none" stroke="#fffdf7" stroke-width="2" stroke-dasharray="3 3"/><path d="M50 22l7.5 15.5 17 2.3-12.3 12 3 17L50 60.6 34.8 68.8l3-17-12.3-12 17-2.3z" fill="#0f3a8a"/></svg>
+ <div class="foot"><div><div>Date of completion</div><strong>${d}</strong><div style="margin-top:6px">Certificate ID: <strong>${c.id}</strong></div></div>
+ <div class="sig"><em>Codester</em>Authorized signature</div></div></div></div>`;
+ fit();
+}
+function fit(){const w=$("#cw"),c=$("#cert");if(!w||!c)return;const s=Math.min(1,w.clientWidth/960);c.style.transform=`scale(${s})`;c.style.transformOrigin="top left";w.style.height=680*s+"px"}
+addEventListener("resize",fit);
+function pdf(){
+ const w=$("#cw"),c=$("#cert"),h=w.style.height;c.style.transform="none";w.style.height="680px";
+ const name=users()[me].name.replace(/\s+/g,"_");
+ html2pdf().set({margin:0,filename:"ICT_Certificate_"+name+".pdf",image:{type:"jpeg",quality:.98},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:"px",format:[960,680],orientation:"landscape",hotfixes:["px_scaling"]}}).from(c).save().then(fit).catch(()=>{fit();alert("PDF export failed. Use Print and choose Save as PDF.")});
+}
+boot();
+</script>
+</body>
+</html>
